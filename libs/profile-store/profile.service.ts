@@ -21,5 +21,5 @@ export class FormsService {
         // Write code here to retrieve a user profile from the random user API
         this.params = new HttpParams().set('inc', this.REQUIRED_PARAMS);
         return this.http.get(this.url, {params: this.params})
-    }
+    };
 };
