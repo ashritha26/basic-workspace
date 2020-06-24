@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Route } from '@angular/router';
 import { UiModule } from '@monofunworkspace/ui';
 import { EffectsModule } from '@ngrx/effects';
-
 import { ProfileListComponent } from './profile-list/profile-list.component';
 import { ProfileListStoreModule } from '../../../profile-list-store/profile-list-store.module';
 import { ProfileStoreModule } from '../../../profile-store/profile-store.module'

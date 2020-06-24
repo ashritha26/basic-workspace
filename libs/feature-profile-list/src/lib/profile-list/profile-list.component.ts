@@ -3,7 +3,6 @@ import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { map, catchError } from 'rxjs/operators';
 import { Observable, Subscription } from 'rxjs';
-
 import * as ProfileListActions from '../../../../profile-list-store/profile-list.actions';
 import * as ProfileActions from '../../../../profile-store/profile.actions';
 import * as profileListSelectors from '../../../../profile-list-store/profile-list.selectors';
