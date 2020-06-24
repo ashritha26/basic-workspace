@@ -22,8 +22,4 @@ export class FormsService {
         this.params = new HttpParams().set('inc', this.REQUIRED_PARAMS);
         return this.http.get(this.url, {params: this.params})
     }
-}
-
-
-
-
+};
