@@ -1,0 +1,6 @@
+<ng-template *ngIf="loadingProfiles$ | async">
+    Loading Profiles...
+</ng-template>
+
+<monofunworkspace-profile-grid [users]="userProfiles" (selectProfile)="handleProfileSelection($event)">
+</monofunworkspace-profile-grid>

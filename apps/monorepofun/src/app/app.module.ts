@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { HttpClientModule } from '@angular/common/http';
 import { InfoComponent } from './info.component';
 
 @NgModule({
@@ -18,6 +19,7 @@ import { InfoComponent } from './info.component';
     BrowserModule,
     UiModule,
     MatToolbarModule,
+    HttpClientModule,
     RouterModule.forRoot(
       [
         {
@@ -31,6 +33,14 @@ import { InfoComponent } from './info.component';
           loadChildren: () =>
             import('@monofunworkspace/feature-profile-details').then(
               module => module.FeatureProfileDetailsModule
+            )
+        },
+        {
+          path: 'profile-list',
+          pathMatch: 'full',
+          loadChildren: () =>
+            import('@monofunworkspace/feature-profile-list').then(
+              module => module.FeatureProfileListModule
             )
         }
       ],

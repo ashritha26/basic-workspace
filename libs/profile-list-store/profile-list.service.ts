@@ -3,8 +3,8 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { environment } from 'apps/monorepofun/src/environments/environment';
 import { Observable } from 'rxjs';
+import { environment } from 'apps/monorepofun/src/environments/environment';
 
 @Injectable({
     providedIn: 'root'
@@ -17,10 +17,9 @@ export class FormsService {
     readonly REQUIRED_PARAMS: string = 'name,email,phone,location,picture';
     params: HttpParams;
 
-    getUserProfile(): Observable<any> {
-        // Write code here to retrieve a user profile from the random user API
-        this.params = new HttpParams().set('inc', this.REQUIRED_PARAMS);
-        return this.http.get(this.url, {params: this.params})
+    getUsers(): Observable<any> {
+        this.params = new HttpParams().set('results', environment.usersLimit).set('inc', this.REQUIRED_PARAMS);
+        return this.http.get(this.url, {params : this.params});
     }
 }
 

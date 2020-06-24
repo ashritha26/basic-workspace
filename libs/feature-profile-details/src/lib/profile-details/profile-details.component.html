@@ -2,4 +2,12 @@
 
 <!-- Code Here -->
 <!-- Use the 'profile card' UI component HERE to display the user profile details  -->
-<monofunworkspace-profile-card></monofunworkspace-profile-card>
+<ng-container *ngIf="loadingProfile$ | async">
+    Loading Profile...
+</ng-container>
+<ng-container *ngIf="userProfileDetails$ | async as userDetails; else error">
+    <monofunworkspace-profile-card [user]="userProfileDetails$ | async"></monofunworkspace-profile-card>
+</ng-container>
+<ng-template #error>
+    <div>  Unable to load User Profile! </div>
+</ng-template>
